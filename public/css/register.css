@@ -1,0 +1,30 @@
+form {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+label, input, textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.validInput{
+    border: 2px solid rgba(1, 194, 82, 0.998);
+}
+.invalidInput{
+    border: 2px solid rgba(232, 3, 3, 0.998);
+}
+
+
