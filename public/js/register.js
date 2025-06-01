@@ -24,16 +24,35 @@ emailInput.addEventListener("change",e=>{
 })
 passwordInput.addEventListener("change",e=>{
     valPassWord=passwordRegrex.test(e.target.value)
-    console.log(valPassWord)
     validar(passwordInput,valPassWord)
+
+    if(matchInput.value!=="" & matchInput.value===e.target.value){
+        console.log("no esta vacio y son iguales",matchInput.value);
+         validar(passwordInput,true);
+         validar(matchInput,true);
+    }else if(matchInput.value===""){
+        console.log("match input esta vacio")
+    }else{
+        console.log("match input esta lleno pero ya no coincide")
+        validar(matchInput,false)
+    }
+    
+    
 
 })
 matchInput.addEventListener("change",e=>{
-    
+    if(e.target.value === passwordInput.value){
+        valMatch=true;
+        console.log(valMatch)
+        validar(matchInput,valMatch)
+    }else{
+        valMatch=false;
+        console.log("no son iguales las claves")
+    }
 })
 
 const validar=(input,value)=>{
-    btnInput.disabled=valName&valEmail&valPassWord ?false :true 
+    btnInput.disabled=valName&valEmail&valPassWord&valMatch ?false :true 
 
     if(value===true){
         input.classList.remove("invalidInput")
